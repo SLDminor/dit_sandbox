@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "projects": {
+    "todolistapp": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/todolistapp",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.json",
+            "aot": true
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "todolistapp:build"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "daeec07d-020c-4924-a40f-7ac61bf51c65"
+  }
+}
