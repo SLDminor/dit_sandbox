@@ -1,13 +1,7 @@
-import {Component} from "@angular/core";
+import {ChangeDetectionStrategy, Component} from "@angular/core";
 import {FormsModule} from "@angular/forms";
-
-class ToDoItem {
-    constructor(
-        public name: string,
-        public done: boolean = false,
-        public id: number = Date.now() + Math.random()
-    ) {}
-}
+import {ToDoItem} from "./todo-item.model";
+import {TodoService} from "./todo.service";
 
 @Component({
     selector: "my-app",
@@ -16,61 +10,28 @@ class ToDoItem {
     imports: [
         FormsModule
     ],
-    template: `
-        <div class="todolist-block">
-            <h2>My ToDoList</h2>
-            <div class="divider"></div>
-            <div class="input-container">
-                <input
-                        class="todo-input"
-                        placeholder="Что-то забыли?"
-                        [(ngModel)]="text"
-                >
-                <button class="add-btn" (click)="addTodo(text)">+</button>
-            </div>
-
-            <div class="todo-list">
-                @if (items.length !== 0) {
-                    <ul>
-                        @for (item of items; track $index) {
-                            <li class="todo-item" [class.done]="item.done">
-                                {{ item.name }}
-                                <div class="todo-actions">
-                                    <button (click)="toggleDone(item.id)" class="action-btn">{{item.done ? '↺' : '✓'}}</button>
-                                    <button (click)="removeItem(item.id)" class="action-btn">×</button>
-                                </div>
-                            </li>
-                        }
-
-                    </ul>
-                } @else {
-                    <div class="empty-container" >Вы ничего не планировали</div>
-                }
-            </div>
-
-        </div>
-    `
+    templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
     text: string = '';
 
-    items: ToDoItem[] = [];
+    get items(): ToDoItem[] {
+        return this.todoService.items;
+    }
+
+    constructor(private todoService: TodoService) {}
 
     addTodo(name: string) {
-
-        if(name == null || name.trim() == "")
-            return;
-        this.items.push(new ToDoItem(name));
-
+        this.todoService.addTodo(name);
         this.text = '';
     }
 
     removeItem(itemId: number) {
-        this.items = this.items.filter(item => item.id !== itemId);
+        this.todoService.removeItem(itemId);
     }
 
     toggleDone(itemId: number) {
-        const item = this.items.find(item => item.id === itemId);
-        item && (item.done = !item.done);
+        this.todoService.toggleDone(itemId);
     }
 }

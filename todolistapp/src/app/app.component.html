@@ -1,0 +1,32 @@
+<div class="todolist-block">
+    <h2>My ToDoList</h2>
+    <div class="divider"></div>
+    <div class="input-container">
+        <input
+                class="todo-input"
+                placeholder="Что-то забыли?"
+                [(ngModel)]="text"
+        >
+        <button class="add-btn" (click)="addTodo(text)">+</button>
+    </div>
+
+    <div class="todo-list">
+        @if (items.length !== 0) {
+            <ul>
+                @for (item of items; track item.id) {
+                    <li class="todo-item" [class.done]="item.done">
+                        {{ item.name }}
+                        <div class="todo-actions">
+                            <button (click)="toggleDone(item.id)" class="action-btn">
+                                {{ item.done ? '↺' : '✓' }}
+                            </button>
+                            <button (click)="removeItem(item.id)" class="action-btn">×</button>
+                        </div>
+                    </li>
+                }
+            </ul>
+        } @else {
+            <div class="empty-container">Вы ничего не планировали</div>
+        }
+    </div>
+</div>
