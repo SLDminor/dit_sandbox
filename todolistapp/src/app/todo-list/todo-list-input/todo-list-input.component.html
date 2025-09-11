@@ -1,0 +1,9 @@
+<div class="input-container">
+    <input
+            class="todo-input"
+            placeholder="Что-то забыли?"
+            [(ngModel)]="text"
+            (keyup.enter)="onAddTodo()"
+    >
+    <button class="add-btn" (click)="onAddTodo()">+</button>
+</div>

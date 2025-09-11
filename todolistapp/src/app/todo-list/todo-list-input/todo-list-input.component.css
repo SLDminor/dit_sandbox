@@ -1,0 +1,48 @@
+.add-btn {
+    padding: 15px 20px;
+    border: 2px solid #1e1e1e;
+    border-radius: 8px;
+    background: var(--mypink);
+    color: #2c2c2c;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.add-btn:hover {
+    color: #f6f6f6;
+    transform: scale(0.99);
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.todo-input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    background: #2c2c2c;
+    color: #f6f6f6;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    border: 2px solid #2c2c2c;
+}
+
+.todo-input:hover {
+    border-color: var(--mypink);
+}
+
+.todo-input::placeholder {
+    color: #666;
+}
+
+.todo-input:focus {
+    border-color: var(--mypink);
+    box-shadow: 0 0 0 3px rgba(238, 156, 167, 0.2);
+}

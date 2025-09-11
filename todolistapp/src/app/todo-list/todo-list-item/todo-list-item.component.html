@@ -1,0 +1,9 @@
+<li class="todo-item" [class.done]="item.done">
+    {{ item.name }}
+    <div class="todo-actions">
+        <button (click)="onToggleDone()" class="action-btn">
+            {{ item.done ? '↺' : '✓' }}
+        </button>
+        <button (click)="onRemoveItem()" class="action-btn">×</button>
+    </div>
+</li>

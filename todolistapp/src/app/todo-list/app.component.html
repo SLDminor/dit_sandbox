@@ -1,0 +1,22 @@
+<div class="todolist-block">
+    <h2>My ToDoList</h2>
+    <div class="divider"></div>
+
+    <app-todo-list-input (addTodo)="onAddTodo($event)"></app-todo-list-input>
+
+    <div class="todo-list">
+        @if (items.length !== 0) {
+            <ul>
+                @for (item of items; track item.id) {
+                    <app-todo-list-item
+                            [item]="item"
+                            (toggleDone)="onToggleDone($event)"
+                            (removeItem)="onRemoveItem($event)">
+                    </app-todo-list-item>
+                }
+            </ul>
+        } @else {
+            <div class="empty-container">Вы ничего не планировали</div>
+        }
+    </div>
+</div>
