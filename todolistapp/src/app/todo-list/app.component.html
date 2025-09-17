@@ -2,7 +2,13 @@
     <h2>My ToDoList</h2>
     <div class="divider"></div>
 
-    <app-todo-list-input (addTodo)="onAddTodo($event)"></app-todo-list-input>
+    @if (isLoading) {
+        <div class="loading">Загрузка...</div>
+    }
+
+    <app-todo-list-input
+            (addTodo)="onAddTodo($event)">
+    </app-todo-list-input>
 
     <div class="todo-list">
         @if (items.length !== 0) {

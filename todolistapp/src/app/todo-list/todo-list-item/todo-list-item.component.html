@@ -1,5 +1,10 @@
 <li class="todo-item" [class.done]="item.done">
-    {{ item.name }}
+    <div class="todo-content">
+        <span class="todo-text">{{ item.name }}</span>
+        <span class="todo-date">
+      {{ item.createdAt | date:'dd.MM.yyyy HH:mm' }}
+    </span>
+    </div>
     <div class="todo-actions">
         <button (click)="onToggleDone()" class="action-btn">
             {{ item.done ? '↺' : '✓' }}

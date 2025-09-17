@@ -1,5 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {Component, Output, EventEmitter} from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 @Component({
     selector: 'app-todo-list-input',

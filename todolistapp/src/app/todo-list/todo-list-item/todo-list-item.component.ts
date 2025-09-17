@@ -1,10 +1,13 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ToDoItem } from '../../models/todo-item.model';
+import {DatePipe} from "@angular/common";
 
 @Component({
     selector: 'app-todo-list-item',
     standalone: true,
-    imports: [],
+    imports: [
+        DatePipe
+    ],
     templateUrl: './todo-list-item.component.html',
     styleUrls: ['./todo-list-item.component.css']
 })
