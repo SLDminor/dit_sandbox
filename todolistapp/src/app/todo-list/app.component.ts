@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {TodoInputComponent} from "./todo-list-input/todo-list-input.component";
-import {TodoItemComponent} from "./todo-list-item/todo-list-item.component";
-import {ToDoItem} from "../models/todo-item.model";
-import {TodoService} from "../services/todo.service";
+import {TodoInputComponent} from "todo-lib";
+import {TodoItemComponent} from "todo-lib";
+import {ToDoItem} from "todo-lib";
+import {TodoService} from "todo-lib";
 
 @Component({
     selector: 'app-component',

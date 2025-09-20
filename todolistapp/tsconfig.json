@@ -12,11 +12,29 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "paths": {
+      "todo-lib": [
+        "./dist/todo-lib"
+      ]
+    },
     "lib": [
       "ES2022",
       "dom"
     ]
   },
   "files": [ "src/main.ts"],
-  "include": [ "src/**/*.d.ts" ]
+  "include": [
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "todo-lib/src/lib/todo-lib.spec.ts"
+  ],
+  "references": [
+    {
+      "path": "./todo-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./todo-lib/tsconfig.spec.json"
+    }
+  ]
 }

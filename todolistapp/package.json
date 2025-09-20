@@ -16,12 +16,16 @@
     "@angular/platform-browser": "~20.0.0",
     "@angular/router": "~20.0.0",
     "rxjs": "~7.4.0",
+    "todo-lib": "file:../todo-lib-workspace/dist/todo-lib",
+    "tslib": "^2.3.0",
     "zone.js": "~0.15.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~20.0.0",
+    "@angular/build": "^20.0.6",
     "@angular/cli": "~20.0.0",
     "@angular/compiler-cli": "~20.0.0",
+    "ng-packagr": "^20.0.0",
     "typescript": "~5.8.0"
   }
 }
