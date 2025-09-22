@@ -14,6 +14,7 @@
     ],
     "paths": {
       "todo-lib": [
+        "./dist/todo-lib",
         "./dist/todo-lib"
       ]
     },
@@ -30,6 +31,12 @@
     "todo-lib/src/lib/todo-lib.spec.ts"
   ],
   "references": [
+    {
+      "path": "./todo-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./todo-lib/tsconfig.spec.json"
+    },
     {
       "path": "./todo-lib/tsconfig.lib.json"
     },

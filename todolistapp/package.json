@@ -6,7 +6,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build"
+    "build": "ng build",
+    "build:lib": "ng build todo-lib --configuration production",
+    "version:lib": "cd projects/todo-lib && npm version",
+    "publish:lib": "npm run build:lib && cd dist/todo-lib && npm publish"
   },
   "dependencies": {
     "@angular/common": "~20.0.0",
