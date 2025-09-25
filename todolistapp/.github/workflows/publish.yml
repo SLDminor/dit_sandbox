@@ -24,6 +24,6 @@ jobs:
         run: ng build todo-lib
 
       - name: Publish to npm
-        run: cd dist/todo-lib && npm publish
+        run: cd dist/todo-lib && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
